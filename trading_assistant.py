@@ -5,10 +5,12 @@ import xgboost as xgb
 import os
 import re
 
-# ================= 配置区域 =================
-MODEL_PATH = r'G:\AI_QW\models\macro_direction_classifier_v2.json'
-LOAD_FILE = r'G:\AI_QW\cleaned_power_data_READY.csv'  # 用于提取历史负荷规律
-# ===========================================
+
+# 获取当前脚本所在的目录
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_PATH = os.path.join(base_dir, 'models', 'macro_direction_classifier_v2.json')
+LOAD_FILE = os.path.join(base_dir, 'cleaned_power_data_READY.csv')
 
 st.set_page_config(page_title="电力套利 AI 助手", page_icon="⚡", layout="wide")
 st.title("⚡ 电力套利 AI 助手 (基于供需比)")
